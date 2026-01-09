@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Domgen Hub - Dogmen</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    user-select: none;
+  }
+  header {
+    background: linear-gradient(90deg, #d4af37 0%, #b8860b 100%);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(212,175,55,0.5);
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #000;
+    letter-spacing: 2px;
+  }
+  nav a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 2rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #fff;
+  }
+  main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    color: #d4af37;
+  }
+  main p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #eee;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+  }
+  .btn-primary {
+    background-color: #d4af37;
+    border: none;
+    padding: 0.85rem 2rem;
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(212,175,55,0.6);
+  }
+  .btn-primary:hover {
+    background-color: #b8860b;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(184,134,11,0.8);
+  }
+  footer {
+    margin-top: 4rem;
+    padding: 1.5rem 1rem;
+    background-color: #111;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  @media (max-width:600px){
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+    nav {
+      margin-top: 0.75rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      font-size: 0.9rem;
+    }
+    main h2 {
+      font-size: 2rem;
+    }
+  
+  
+  
+   * {
+    box-sizing: border-box;
+  }
+  body {
+    margin:0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
+    color: gold;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+    max-width: 480px;
+    margin: 3rem auto;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgb(0 0 0 / 0.1);
+    padding: 2.5rem 2rem 3rem;
+  }
+  h1 {
+    margin-top: 0;
+    font-weight: 700;
+    color: gold;
+    text-align: center;
+  }
+  p.description {
+    text-align: center;
+    color: white;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+  label {
+    font-weight: 600;
+    color: gold;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    background:black;
+    color:white;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1.8px solid #ccc;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: gold;
+    
+    outline: none;
+    box-shadow: 0 0 8px rgb(0 51 102 / 0.3);
+  }
+  textarea {
+    min-height: 120px;
+  }
+  button {
+    background: #ffc72b;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: gold;
+  }
+  .footer {
+    text-align: center;
+    padding: 1rem 1rem 2rem;
+    color: gold;
+    font-size: 0.9rem;
+  }
+  .success-message {
+    background: #d4edda;
+    border: 1.5px solid #c3e6cb;
+    color: gold;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+  }
+  @media (max-width: 520px) {
+    main {
+      margin: 2rem 1rem;
+      padding: 2rem 1.5rem 2.5rem;
+    }
+  }
+  img {
+      height:250px;
+      width :250px;
+      border-radius:200px;
+      
+  }
+  .ww{
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      font-size:18px;
+      border-radius:20px;
+  }
+   .tt{
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size:18px;
+      border-radius:20px;
+  }
+  
+  .ff {
+    flex: 1;
+    max-width: 480px;
+    margin: 3rem auto;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgb(0 0 0 / 0.1);
+    padding: 2.5rem 2rem 3rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  .mm{
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      font-size:18px;
+      border-radius:20px;
+      
+  }
+  .v{
+      color: white;
+      text-shadow:0 0 13px #ffffff;
+  }
+  .g{
+      color: #80eaff;
+      text-shadow:0 0 13px #ffffff;
+  }
+  
+  
+  
+</style>
+</head>
+<body>
+<header>
+  <h1> 𝐃Ω𝐌𝐆Ξ𝐍 | 𝑯บ𝑩</h1>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+    <img src="dg.png">
+  <h2>Welcome to 𝐃Ω𝐌𝐆Ξ𝐍</h2>
+  <p>we are a company you will love to work with
+  </p>
+  <a href="https://chat.whatsapp.com/Kq2dW4hnH9yDkE0kpEWPyh?mode=ems_copy_t">
+  <button class="btn-primary" onclick="alert('Thank you for joining our company! please join all the grou you see over there. will contact you soon.')">Join company</button>
+  </a>
+</main>
+
+<ww class="ww">
+    <b>
+        <h2>What we can help you create</h2>
+<li>We create animation</li>
+  <li>we create website & apps</li>
+  <li>we create Ai & bots</li>
+  <li>we design</li>
+  <li>we edit & Draw</li>
+  <li>we make your work easy</li>
+  </b>
+  </ww>
+  <br><br><br>
+  
+  <br><br><br>
+  
+  <ff class="ff">
+      <h2>Support Channel</h2>
+  <a href="">
+  <button class="btn-primary" onclick="alert('Thank you for joining our company channel! please follow. we would contact you soon.')">Support</button>
+  </a>
+  </ff>
+  <br><br>
+  
+  <mm class="mm">
+      
+      <h1>The Creators of the company are</h1>
+      
+      <h3><span class="v">DOM-X</span> & <span class="g">GENETIC</span></h3>
+  </mm>
+<footer>
+  &copy; 2024 Domgen Hub | Powered by Dominion & Genesis
+</footer>
+<script>
+   
+</script>
+</body>
+</html>

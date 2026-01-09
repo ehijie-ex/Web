@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Image Downloader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #d4af37; /* Gold */
+      color: black;
+      padding: 20px;
+    }
+
+    header input {
+      padding: 10px;
+      width: 200px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    header button {
+      padding: 10px 15px;
+      cursor: pointer;
+      background-color: black;
+      color: #d4af37; /* Gold text */
+      border: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    header button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+      gap: 20px;
+    }
+
+    .image-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #111;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #d4af37; /* Gold border */
+      width: 100%; /* Take full width for small screens */
+      max-width: 500px; /* Bigger images */
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .image-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .download-btn {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: black;
+      color: #d4af37;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    @media (min-width: 600px) {
+      .image-card {
+        width: 45%; /* Two images per row on larger screens */
+      }
+    }
+
+    @media (min-width: 900px) {
+      .image-card {
+        width: 30%; /* Three images per row on larger screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cool Image Downloader</h1>
+    <input type="text" id="searchInput" placeholder="Search for images...">
+    <button id="searchBtn">Search</button>
+  </header>
+
+  <main>
+    <div id="gallery" class="gallery">
+      <!-- Images will appear here -->
+    </div>
+  </main>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    const images = [
+      { url: 'https://picsum.photos/id/1015/800/500', title: 'Mountain' },
+      { url: 'https://picsum.photos/id/1025/800/500', title: 'Dog' },
+      { url: 'profile1.jpg', title: 'Joker' },
+      { url: 'profile2.jpg', title: 'Lion' },
+      { url: 'profile3.jpg', title: 'Goku MUI' },
+      { url: 'profile4.jpg', title: 'Sung Jin Woo Solo Leveling' },
+      { url: 'profile6.jpg', title: 'Car Lamborghini Ferrari' },
+      { url: 'profile7.jpg', title: 'Sung Jin Woo Solo Leveling' },
+      { url: 'https://picsum.photos/id/1035/800/500', title: 'Sea' },
+      { url: 'https://picsum.photos/id/1045/800/500', title: 'Forest' },
+      { url: 'https://picsum.photos/id/1055/800/500', title: 'City' },
+    ];
+
+    function displayImages(imgArray) {
+      gallery.innerHTML = '';
+      imgArray.forEach(img => {
+        const card = document.createElement('div');
+        card.className = 'image-card';
+
+        const imgElement = document.createElement('img');
+        imgElement.src = img.url;
+        imgElement.alt = img.title;
+
+        const downloadBtn = document.createElement('button');
+        downloadBtn.className = 'download-btn';
+        downloadBtn.textContent = 'Download';
+
+        // Download logic
+        downloadBtn.addEventListener('click', () => {
+          fetch(img.url)
+            .then(response => response.blob())
+            .then(blob => {
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = img.title + '.jpg';
+              a.click();
+              window.URL.revokeObjectURL(url);
+            })
+            .catch(() => alert('Failed to download image.'));
+        });
+
+        card.appendChild(imgElement);
+        card.appendChild(downloadBtn);
+        gallery.appendChild(card);
+      });
+    }
+
+    // Initial display
+    displayImages(images);
+
+    // Search functionality
+    searchBtn.addEventListener('click', () => {
+      const query = searchInput.value.toLowerCase();
+      const filtered = images.filter(img => img.title.toLowerCase().includes(query));
+      displayImages(filtered);
+    });
+  </script>
+</body>
+</html>
