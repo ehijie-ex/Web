@@ -1,76 +1,212 @@
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOMGEN Web Service</title>
+  <style>
+    /* ===== Colors ===== */
+    :root {
+      --gold: #FFD700;
+      --black: #121212;
+      --white: #FFFFFF;
+    }
 
-<main>
-<a href="">
-<h1>AI</h1>
-<p>Our Ai programmed by use
-it teaches everything you need to know</p>
-</a>
-<br><br>
-</main>
+    /* ===== Reset & Base ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
 
-<main>
-<a href="cool profile.html">
-<h1>Cool Profile</h1>
-<p>easily get cool profile picture from here</p>
-</a>
-<br><br>
-</main>
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
 
-<main>
-<a href="movie.html">
-<h1>Movie Searcher</h1>
-<p>search any movie and find it here, but you can't download</p>
-</a>
-<br><br>
-</main>
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
 
-<main>
-<a href="botindex.html">
-<h1>𝐃Ω𝐌𝐆Ξ𝐍-𝑴𝑫 𝑩𝑶𝑻</h1>
-<p>our MD bot that have various cool function try it now</p>
-</a>
-<br><br>
-</main>
+    a:hover {
+      opacity: 0.8;
+    }
 
+    /* ===== Header ===== */
+    header {
+      background-color: var(--black);
+      border-bottom: 2px solid var(--gold);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
+    header h1 {
+      color: var(--gold);
+      font-size: 2rem;
+    }
 
-<style>
-   main{
-    background: black;
-            color: black;
-            text-align: center;
-            
-            border-radius: 13px;
-            
-            
-            border: 55px gold;
-            box-shadow: 0 0 5px white;
-            }
-            
-            h1 {
-                color: gold;
-                cursor: pointer;
-                font-weight:bold;
-                text-shadow: 0 0 5px white;
-            }
-            p{
-                color: white;
-                cursor: pointer;
-                font-weight:bold;
-            }
-            
-            body{
-                content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #1d1b12, #b37c38, #060606, #ff8c00);
-            z-index: -1;
-            border-radius: 18px;
-            animation: borderAnimation 3s linear infinite;
-            }
-</style>
+    nav a {
+      margin-left: 20px;
+      font-weight: bold;
+    }
 
+    /* ===== Hero Section ===== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+      text-align: center;
+      background: linear-gradient(135deg, var(--black) 60%, #1a1a1a 100%);
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--white);
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: var(--gold);
+      border: none;
+      color: var(--black);
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      opacity: 0.8;
+    }
+
+    /* ===== Services Section ===== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 60px 40px;
+      background-color: #1a1a1a;
+    }
+
+    .service-card {
+      background-color: var(--black);
+      border: 2px solid var(--gold);
+      padding: 30px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+    }
+
+    .service-card h3 {
+      color: var(--gold);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .service-card p {
+      color: var(--white);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: var(--black);
+      border-top: 2px solid var(--gold);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      color: var(--white);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px 0 0 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>𝐃Ω𝐌𝐆Ξ𝐍</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h2>Your Ultimate Web Service</h2>
+    <p>We provide premium, secure, and high-quality services tailored for developers, creators, and businesses. Fast, reliable, and 24/7 support.</p>
+    <button onclick="alert('Get Started!')">Get Started</button>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="services">
+    <div class="service-card">
+      <h3>AI Tools</h3>
+      <p>Automate tasks, generate content, and boost productivity with AI-powered solutions.</p>
+    </div>
+    <div class="service-card">
+        <a href="botindex.html">
+      <h3>Bot Development</h3>
+      <p>Create stunning websites and apps with our professional development team.</p>
+    </div>
+    <div class="service-card">
+      <h3>Cyber Security</h3>
+      <p>Protect your data and infrastructure with top-notch security services.</p>
+    </div>
+    
+    <div class="service-card">
+        <a href="cool profile.html">
+      <h3>Cool profile Tools</h3>
+      <p>get cool profile picture, or wallpaper for your photo, it's is completely free</p>
+      </a>
+      
+      <div class="service-card">
+        <a href="movie.html">
+      <h3>Cool profile Tools</h3>
+      <p>you can search movies, and check information, but not downloadable </p>
+      </a>
+    </div>
+    
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact">
+    <p>© 2026 DOMGEN. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
